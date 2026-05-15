@@ -18,9 +18,9 @@ load_dotenv(override=True)
 # Função para carregar os dados
 @st.cache_data
 def carregar_dados():
-    h = pd.read_csv('hotel.csv')
-    c = pd.read_csv('clientes.csv')
-    r = pd.read_csv('restaurante.csv')
+    h = pd.read_csv('datasets/hotel.csv')
+    c = pd.read_csv('datasets/clientes.csv')
+    r = pd.read_csv('datasets/restaurante.csv')
     # Cruzamento de dados (Joins)
     df_h = pd.merge(h, c, on='cliente_id', how='left')
     df_r = pd.merge(r, c, on='cliente_id', how='left')
